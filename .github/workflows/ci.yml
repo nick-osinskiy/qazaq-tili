@@ -21,3 +21,9 @@ jobs:
         run: npm run test
       - name: Check types and build
         run: npm run build
+      - name: Save private preview build
+        uses: actions/upload-artifact@v4
+        with:
+          name: soz-site-preview
+          path: dist/
+          retention-days: 7

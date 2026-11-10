@@ -18,6 +18,16 @@ const revealed = ref(false)
       <FavoriteButton :id="item.id" />
     </template>
     <p class="card-kicker">{{ item.partOfSpeech }} · {{ item.tags.join(', ') }}</p>
+    <div v-if="item.image" class="word-illustration">
+      <img
+        :src="item.image"
+        :alt="item.imageAlt || 'Иллюстрация к слову ' + item.word"
+        class="word-illustration__image"
+        loading="lazy"
+        width="480"
+        height="280"
+      />
+    </div>
     <button
       type="button"
       class="word-flip"

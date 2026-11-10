@@ -17,6 +17,8 @@ export interface WordPost extends BasePost {
   word: string
   translation: string
   transcription?: string
+  image?: string
+  imageAlt?: string
   partOfSpeech: string
   examples: BilingualExample[]
 }

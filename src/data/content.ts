@@ -1,25 +1,42 @@
 import type {
   WordPost, PhrasePost, ReadingPost, ExercisePost, GrammarPost
 } from '../types/content'
+import appleImage from '../assets/illustrations/apple.svg'
+import bookImage from '../assets/illustrations/book.svg'
+import helloImage from '../assets/illustrations/hello.svg'
+import thanksImage from '../assets/illustrations/thanks.svg'
+import catImage from '../assets/illustrations/cat.svg'
 
 export const words: WordPost[] = [
   {
     id: 'word-salem', kind: 'word', level: 'A1', tags: ['Приветствие'],
     word: 'Сәлем', translation: 'Привет', transcription: 'сә-лем',
-    partOfSpeech: 'Междометие',
+    partOfSpeech: 'Междометие', image: helloImage, imageAlt: 'Два человека приветствуют друг друга',
     examples: [{ kk: 'Сәлем, Айдана!', ru: 'Привет, Айдана!' }]
   },
   {
     id: 'word-rahmet', kind: 'word', level: 'A1', tags: ['Вежливость'],
     word: 'Рақмет', translation: 'Спасибо', transcription: 'рақ-мет',
-    partOfSpeech: 'Междометие',
+    partOfSpeech: 'Междометие', image: thanksImage, imageAlt: 'Букет цветов — знак благодарности',
     examples: [{ kk: 'Көмегіңізге рақмет!', ru: 'Спасибо за вашу помощь!' }]
   },
   {
     id: 'word-kitap', kind: 'word', level: 'A1', tags: ['Предметы'],
     word: 'Кітап', translation: 'Книга', transcription: 'кі-тап',
-    partOfSpeech: 'Существительное',
+    partOfSpeech: 'Существительное', image: bookImage, imageAlt: 'Открытая книга на столе',
     examples: [{ kk: 'Бұл қызық кітап.', ru: 'Это интересная книга.' }]
+  },
+  {
+    id: 'word-alma', kind: 'word', level: 'A1', tags: ['Еда', 'Фрукты'],
+    word: 'Алма', translation: 'Яблоко', transcription: 'ал-ма',
+    partOfSpeech: 'Существительное', image: appleImage, imageAlt: 'Красное яблоко с зелёным листом',
+    examples: [{ kk: 'Бұл қызыл алма.', ru: 'Это красное яблоко.' }]
+  },
+  {
+    id: 'word-mysyk', kind: 'word', level: 'A1', tags: ['Животные'],
+    word: 'Мысық', translation: 'Кошка', transcription: 'мы-сық',
+    partOfSpeech: 'Существительное', image: catImage, imageAlt: 'Рыжая кошка',
+    examples: [{ kk: 'Менің мысығым бар.', ru: 'У меня есть кошка.' }]
   }
 ]
 
@@ -108,7 +125,7 @@ export const exercises: ExercisePost[] = [
 export const grammar: GrammarPost[] = [
   {
     id: 'grammar-question-particles', kind: 'grammar', level: 'A1',
-    tags: ['Вопросы', 'Частицы'], title: 'Вопросительные шылаулар',
+    tags: ['Вопросы', 'Частицы'], title: 'Вопросительные частицы',
     introduction: 'Как превратить утверждение в вопрос «да или нет»?',
     formula: 'Слово + ма/ме/ба/бе/па/пе + ?',
     explanation: 'Вопросительная частица пишется отдельно. Её форма зависит от звучания предыдущего слова.',

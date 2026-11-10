@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import FeedView from './views/FeedView.vue'
+import HomeView from './views/HomeView.vue'
 import type { ContentSection } from './types/content'
 
 const pages: { path: string; name: string; section: ContentSection }[] = [
@@ -15,12 +16,16 @@ export const navigation = pages
 
 export default createRouter({
   history: createWebHashHistory(),
-  routes: pages.map(page => ({
-    path: page.path,
-    name: page.name,
-    component: FeedView,
-    props: { section: page.section }
-  })),
+  routes: [
+    { path: '/', name: 'Главная', component: HomeView },
+    ...pages.filter(page => page.path !== '/').map(page => ({
+      path: page.path,
+      name: page.name,
+      component: FeedView,
+      props: { section: page.section }
+    })),
+    { path: '/:pathMatch(.*)*', redirect: '/' }
+  ],
   scrollBehavior() {
     return { top: 0 }
   }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title">
+<title id="title">Рыжая кошка</title><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#FFF2E7"/><stop offset="1" stop-color="#FFEAD0"/></linearGradient><linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC083"/><stop offset="1" stop-color="#E88C63"/></linearGradient></defs>
+<rect width="480" height="280" rx="26" fill="url(#bg)"/><ellipse cx="241" cy="238" rx="112" ry="16" fill="#C8937F" opacity=".2"/>
+<path d="M296 209q92 15 88-50-2-30-25-30" stroke="#E59768" stroke-width="23" stroke-linecap="round" fill="none"/>
+<ellipse cx="241" cy="193" rx="82" ry="59" fill="url(#fur)"/><path d="M174 99l-7-64 62 29m70 35 9-64-62 29" fill="#EA966A" stroke="#CA795C" stroke-width="5" stroke-linejoin="round"/><path d="M184 76l-3-24 29 16m74 8 9-24-29 16" fill="#EAAEA8"/>
+<ellipse cx="239" cy="124" rx="84" ry="77" fill="url(#fur)"/><path d="M197 119q9-10 22 0m42 0q13-10 22 0" fill="none" stroke="#754A43" stroke-width="5" stroke-linecap="round"/>
+<path d="M225 149l14 10 14-10Z" fill="#A85D57"/><path d="M239 159q-5 13-15 12m15-12q5 13 15 12" stroke="#805A53" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="M206 159l-58-8m57 19-53 5m124-16 58-8m-57 19 53 5" stroke="#9F6F58" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="200" cy="229" rx="25" ry="13" fill="#F9BE91"/><ellipse cx="279" cy="229" rx="25" ry="13" fill="#F9BE91"/>
+<path d="M236 70l-7 15 12 2-6 12m-25-26-5 14m60-11 4 14" stroke="#D17C56" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title">
+<title id="title">Люди приветствуют друг друга</title><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#EDE9FF"/><stop offset="1" stop-color="#DDE9FF"/></linearGradient></defs>
+<rect width="480" height="280" rx="26" fill="url(#bg)"/><circle cx="400" cy="55" r="54" fill="#FFFFFF" opacity=".4"/>
+<ellipse cx="151" cy="236" rx="67" ry="25" fill="#8F84C4" opacity=".18"/><ellipse cx="317" cy="236" rx="72" ry="25" fill="#8F84C4" opacity=".18"/>
+<path d="M87 227c3-57 23-82 66-82s64 27 69 82" fill="#8872C4"/><circle cx="151" cy="111" r="43" fill="#D8A17F"/><path d="M108 112c-7-47 26-66 58-55 22 8 28 30 26 54l-17-18-28-19-24 30Z" fill="#38324F"/><path d="M140 119q11 9 22-1" stroke="#86564A" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M257 227c2-55 21-81 65-81s63 30 68 81" fill="#6BACC6"/><circle cx="321" cy="113" r="43" fill="#E7B796"/><path d="M280 107c-1-37 23-59 51-56 24 1 35 19 31 55l-16-26-38-7-22 36Z" fill="#564C5D"/>
+<path d="M312 121q10 9 20 0" stroke="#975B52" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M222 149l25-21 18 12" stroke="#D8A17F" stroke-width="19" stroke-linecap="round" fill="none"/>
+<path d="M202 64q0-18 19-18h104q19 0 19 18v26q0 18-19 18h-35l-20 17v-17h-49q-19 0-19-18Z" fill="#FFFFFF" stroke="#C6B8E7" stroke-width="4"/>
+<text x="273" y="86" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#6C5F95">Сәлем!</text>
+</svg>

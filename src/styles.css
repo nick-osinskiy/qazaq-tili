@@ -186,3 +186,32 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 @media (prefers-reduced-motion: no-preference) {
   .section-tab, .icon-button, .subtle-button, .answer-option { transition: background .15s ease, border-color .15s ease; }
 }
+
+
+/* Shared visual treatment for illustrated vocabulary cards. */
+.word-illustration {
+  width: 100%;
+  margin: 0 0 12px;
+  border: 1px solid #4a4968;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 12 / 7;
+  background: #f7e6dc;
+}
+.word-illustration__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page-hero { min-height: 183px; padding: 30px 36px; }
+.page-hero h1 { margin: 8px 0; font-size: clamp(27px,3.8vw,39px); }
+.page-hero .hero-description { max-width: 690px; }
+.section-nav { padding: 10px 0 19px; }
+.section-tab { min-height: 41px; }
+.site-footer { margin-top: 20px; }
+@media (max-width: 740px) {
+  .page-hero { padding: 23px; min-height: 165px; }
+  .section-nav { margin-bottom: 0; }
+  .header-progress { display: none; }
+}
