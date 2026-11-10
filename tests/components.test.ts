@@ -10,11 +10,12 @@ beforeEach(() => localStorage.clear())
 
 describe('interactive learning cards', () => {
   it('reveals a word translation on click', async () => {
-    const wrapper = mount(WordCard, { props: { item: words[0] }, global: { plugins: [createPinia()] } })
+    const wrapper = mount(WordCard, { props: { item: words[0] }, attachTo: document.body, global: { plugins: [createPinia()] } })
     expect(wrapper.find('.translation-reveal').isVisible()).toBe(false)
     await wrapper.find('.word-flip').trigger('click')
     expect(wrapper.find('.translation-reveal').isVisible()).toBe(true)
     expect(wrapper.text()).toContain('Привет')
+    wrapper.unmount()
   })
 
   it('checks a single-choice answer correctly', async () => {
