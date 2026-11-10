@@ -14,7 +14,7 @@ const revealed = ref(false)
 <template>
   <CardFrame kind="word" label="Слово" :level="item.level">
     <template #actions>
-      <SpeakButton :text="item.word" />
+      <SpeakButton :text="item.word" :audio-key="`word:${item.id}:main`" />
       <FavoriteButton :id="item.id" />
     </template>
     <p class="card-kicker">{{ item.partOfSpeech }} · {{ item.tags.join(', ') }}</p>
@@ -42,7 +42,7 @@ const revealed = ref(false)
     <div :id="'word-translation-' + item.id" v-show="revealed" class="translation-reveal">
       <strong>{{ item.translation }}</strong>
       <div v-for="(example, index) in item.examples" :key="index" class="bilingual-example">
-        <span lang="kk">{{ example.kk }}</span>
+        <div class="audio-inline"><span lang="kk">{{ example.kk }}</span><SpeakButton :text="example.kk" :audio-key="`word:${item.id}:example:${index}`" /></div>
         <span class="muted">{{ example.ru }}</span>
       </div>
     </div>

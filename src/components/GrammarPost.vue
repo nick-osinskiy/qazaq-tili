@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import type { GrammarPost } from '../types/content'
 import CardFrame from './CardFrame.vue'
 import FavoriteButton from './FavoriteButton.vue'
+import SpeakButton from './SpeakButton.vue'
 
 const props = defineProps<{ item: GrammarPost }>()
 const expanded = ref(false)
@@ -23,7 +24,7 @@ const visibleExamples = computed(() => expanded.value ? props.item.examples : pr
     <h3 class="small-heading">Примеры</h3>
     <div class="example-list">
       <div v-for="(example, index) in visibleExamples" :key="index" class="example-row">
-        <strong lang="kk">{{ example.kk }}</strong>
+        <div class="audio-inline"><strong lang="kk">{{ example.kk }}</strong><SpeakButton :text="example.kk" :audio-key="`grammar:${item.id}:example:${index}`" /></div>
         <span>{{ example.ru }}</span>
         <small v-if="example.note">{{ example.note }}</small>
       </div>

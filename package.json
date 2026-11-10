@@ -1,6 +1,6 @@
 {
   "name": "soz-qazaq-tili",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "audio:plan": "node scripts/generate-audio.mjs --plan",
+    "audio:generate": "node scripts/generate-audio.mjs"
   },
   "dependencies": {
     "pinia": "^2.3.1",

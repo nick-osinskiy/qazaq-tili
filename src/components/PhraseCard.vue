@@ -13,7 +13,7 @@ const revealBreakdown = ref(false)
 <template>
   <CardFrame kind="phrase" label="Фраза" :level="item.level">
     <template #actions>
-      <SpeakButton :text="item.phrase" />
+      <SpeakButton :text="item.phrase" :audio-key="`phrase:${item.id}:main`" />
       <FavoriteButton :id="item.id" />
     </template>
     <p class="card-kicker">{{ item.situation }}</p>

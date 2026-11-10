@@ -1,0 +1,67 @@
+name: Generate Kazakh audio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/content.ts'
+      - 'scripts/**'
+      - '.github/workflows/audio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soz-audio-generator
+  cancel-in-progress: false
+
+jobs:
+  audio:
+    name: Generate missing Kazakh MP3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Print planned narration files (no API requests)
+        run: npm run audio:plan
+      - name: Check Azure Speech secrets
+        id: azure
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: |
+          if [ -n "$AZURE_SPEECH_KEY" ] && [ -n "$AZURE_SPEECH_REGION" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Azure secrets are not configured. No MP3 files generated. Add AZURE_SPEECH_KEY and AZURE_SPEECH_REGION in Settings > Secrets and variables > Actions, then run this workflow manually."
+          fi
+      - name: Generate only missing or changed MP3 files
+        if: steps.azure.outputs.ready == 'true'
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          AUDIO_MAX_NEW_CLIPS: '80'
+        run: npm run audio:generate
+      - name: Commit generated MP3 and manifest
+        if: steps.azure.outputs.ready == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/audio-index.json public/audio/
+          if ! git diff --cached --quiet; then
+            git commit -m "audio: add generated Kazakh recordings [automated]"
+            git push origin HEAD:main
+          else
+            echo "No audio changes to commit"
+          fi

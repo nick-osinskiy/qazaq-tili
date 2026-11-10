@@ -4,6 +4,7 @@ import type { ReadingPost } from '../types/content'
 import { useLearningStore } from '../stores/learning'
 import CardFrame from './CardFrame.vue'
 import FavoriteButton from './FavoriteButton.vue'
+import SpeakButton from './SpeakButton.vue'
 
 defineProps<{ item: ReadingPost }>()
 const store = useLearningStore()
@@ -19,7 +20,7 @@ const showWords = ref(false)
     <p class="post-lead">{{ item.summary }}</p>
     <div class="reading-body">
       <div v-for="(paragraph, index) in item.paragraphs" :key="index" class="reading-paragraph">
-        <p lang="kk">{{ paragraph.kk }}</p>
+        <div class="audio-inline"><p lang="kk">{{ paragraph.kk }}</p><SpeakButton :text="paragraph.kk" :audio-key="`reading:${item.id}:paragraph:${index}`" /></div>
         <p v-if="showTranslation" class="translated-paragraph">{{ paragraph.ru }}</p>
       </div>
     </div>

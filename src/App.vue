@@ -44,7 +44,7 @@ const currentPage = computed(() => navigation.find(page => page.path === route.p
     </main>
 
     <footer class="site-footer">
-      <span>СӨЗ · v0.3.0</span>
+      <span>СӨЗ · v0.4.0</span>
       <span>От первого слова до свободной речи.</span>
     </footer>
   </div>

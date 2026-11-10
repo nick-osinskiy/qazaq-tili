@@ -215,3 +215,19 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .section-nav { margin-bottom: 0; }
   .header-progress { display: none; }
 }
+
+/* Shared controls for the Azure-generated Kazakh audio library */
+.topbar-right { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.audio-settings { display: flex; gap: 6px; align-items: center; }
+.audio-settings__label { font-size: 11px; color: var(--muted); }
+.audio-settings select { border: 1px solid var(--line); border-radius: 10px; background: #232944; color: var(--text); padding: 9px 7px; font: inherit; font-size: 12px; min-height: 34px; }
+.audio-settings select:focus-visible { outline: 2px solid #e7bcff; outline-offset: 2px; }
+.speak-button { width: 32px; height: 32px; flex-shrink: 0; }
+.audio-inline { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.audio-inline p { flex: 1; }
+.audio-inline > span, .audio-inline > strong { flex: 1; min-width: 0; }
+@media(max-width: 680px) {
+  .topbar { flex-wrap: wrap; padding: 12px 0 5px; }
+  .topbar-right { width: 100%; justify-content: space-between; }
+  .audio-settings select { padding: 7px 5px; }
+}
